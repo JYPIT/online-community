@@ -1,0 +1,31 @@
+{
+  "name": "online-community",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JYPIT/online-community.git"
+  },
+  "keywords": [],
+  "author": "JYPIT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JYPIT/online-community/issues"
+  },
+  "homepage": "https://github.com/JYPIT/online-community#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "nodemon": "^2.0.19"
+  },
+  "type": "module"
+}
