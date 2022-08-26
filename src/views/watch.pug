@@ -1,3 +1,5 @@
 extends base.pug
 
-block content 
+block content
+    h3 조회수 #{post.views}
+    a(href=`${post.id}/edit`) Edit Post &rarr;
