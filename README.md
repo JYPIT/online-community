@@ -6,12 +6,16 @@
 /login -> 로그인
 /search -> 검색
 
-/users/edit -> 프로필 수정
-/users/delete -> 프로필 삭제
+/users/:id -> 프로필 보기
+/users/logout -> 로그아웃
+/users/edit -> 나의 프로필 수정
+/users/delete -> 나의 프로필 삭제
 
 /posts/:id
-/posts/edit
-/posts/delete
+/posts/:id/edit
+/posts/:id/delete
+/posts/upload
+
 /posts/comments
 /posts/comments/edit
 /posts/comments/delete

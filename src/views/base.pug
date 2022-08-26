@@ -1,0 +1,20 @@
+doctype html
+html(lang="ko")
+    head 
+        title #{pageTitle} | Ἀγορά
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    body
+        header
+            h1=pageTitle
+            small Hello #{fakeUser.username}
+            nav
+                ul  
+                    if fakeUser.loggedIn
+                        li 
+                            a(href="/logout") Logout
+                    else
+                        li 
+                            a(href="/login") Login
+        main 
+            block content
+    include partials/footer.pug 
