@@ -1,0 +1,7 @@
+mixin post(info)
+    div
+            h4=info.title 
+            ul
+                li 조회수 #{info.views}
+                li 댓글 #{info.comments }
+                li #{info.createdAt}

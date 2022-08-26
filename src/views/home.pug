@@ -1,6 +1,9 @@
 extends base.pug
+include mixins/post
 
 block content
-    ul 
-        each post in posts 
-            li=post
+    h3 주요 뉴스
+    each p in posts 
+        +post(p)
+    else 
+        h4 게시글이 존재하지 않습니다.
