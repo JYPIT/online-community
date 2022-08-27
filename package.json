@@ -19,6 +19,7 @@
   "homepage": "https://github.com/JYPIT/online-community#readme",
   "dependencies": {
     "express": "^4.18.1",
+    "mongoose": "^6.5.3",
     "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
