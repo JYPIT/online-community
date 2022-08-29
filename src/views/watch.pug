@@ -1,5 +1,9 @@
 extends base.pug
 
 block content
-    h3 조회수 #{post.views}
-    a(href=`${post.id}/edit`) Edit Post &rarr;
+    div 
+        p=post.content
+        small=post.createdAt
+    a(href=`${post.id}/edit`) 게시글 수정 &rarr;
+    br
+    a(href=`${post.id}/delete`) 게시글 삭제 &rarr;

@@ -3,5 +3,7 @@ extends base.pug
 block content 
     h4 수정하기
     form(method="POST")
-        input(name="title" placeholder="게시글 제목" value=post.title, required)
-        input(value="저장" type="submit")
+        input(name="title" placeholder="제목" type="text" required value=post.title)
+        input(name="content" placeholder="내용" type="text" required value=post.content)
+        input(name="hashtags" placeholder="해시태그 (콤마로 구분)" type="text" value=(post.hashtags).join())
+        input(type="submit" value="업로드")
