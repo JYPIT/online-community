@@ -3,6 +3,21 @@ import Post from "../models/Post.js";
 export const home = async (req, res) => {
   try {
     const posts = await Post.find({}).sort({ createdAt: "desc" });
+    const { keyword } = req.query;
+    let findedPost = [];
+    if (keyword) {
+      findedPost = await Post.find({
+        title: {
+          $regex: new RegExp(keyword, "i"),
+        },
+      }).sort({ createdAt: "desc" });
+      const findCheck = await Post.exists({ title: { $regex: new RegExp(keyword, "i") } });
+      if (!findCheck) {
+        return res.status(404).render("search", { pageTitle: `"${keyword}"를 찾을 수 없습니다.`, findedPost, findCheck });
+      } else {
+        return res.render("search", { pageTitle: "검색", findedPost });
+      }
+    }
     return res.render("home", { pageTitle: "Ἀγορά", posts });
   } catch {
     return res.render("Error");
@@ -13,7 +28,7 @@ export const watch = async (req, res) => {
   const { id } = req.params;
   const post = await Post.findById(id);
   if (!post) {
-    return res.render("404", { pageTitle: "게시물이 존재하지 않습니다." });
+    return res.status(404).render("404", { pageTitle: "게시물이 존재하지 않습니다." });
   }
   return res.render("watch", { pageTitle: post.title, post });
 };
@@ -58,17 +73,4 @@ export const deletePost = async (req, res) => {
   const { id } = req.params;
   await Post.findByIdAndDelete(id);
   return res.redirect("/");
-};
-
-export const search = async (req, res) => {
-  const { keyword } = req.query;
-  let posts = [];
-  if (keyword) {
-    posts = await Post.find({
-      title: {
-        $regex: new RegExp(keyword, "i"),
-      },
-    });
-  }
-  return res.render("search", { pageTitle: "검색", posts });
 };

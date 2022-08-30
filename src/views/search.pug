@@ -6,5 +6,6 @@ block content
         input(placeholder="제목 입력..." name="keyword" type="text")
         input(value="검색" type="submit")
     div
-        each p in posts 
+        each p in findedPost 
             +post(p)
+    

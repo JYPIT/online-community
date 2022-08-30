@@ -1,6 +1,10 @@
 extends base.pug
 include mixins/post
 
+block search 
+    form
+        input(type="text" name="keyword" placeholder="통합검색")
+        input(value="검색" type="submit")
 block content
     h3 주요 뉴스
     each p in posts 
