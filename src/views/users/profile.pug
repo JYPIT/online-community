@@ -1,0 +1,9 @@
+extends ../base
+include ../mixins/post
+
+block content
+    each p in user.posts 
+        +post(p)
+    else 
+        li 게시물이 존재하지 않습니다.
+    

@@ -11,12 +11,15 @@ html(lang="ko")
                     li
                         a(href="/") 홈
                     if loggedIn
+                        li 
+                            a(href=`/users/${loggedInUser._id}`) #{loggedInUser.nickname} 
+                                img(src=loggedInUser.avatarUrl width=50 height=50) 
                         li
-                            a(href="/profile") #{loggedInUser.nickname}
+                            a(href="/users/edit") 프로필 수정
                         li 
                             a(href="/users/logout") 로그아웃
                         li 
-                            a(href="/posts/upload") 글쓰기 
+                            a(href="/posts/upload") 글쓰기
                     else
                         li 
                             a(href="/login") 로그인

@@ -1,9 +1,13 @@
 extends base.pug
 
 block content
+    video(src="/"+post.fileUrl controls width=800 height=500)
+    div 
+        a(href=`/users/${post.owner._id}`) #{post.owner.nickname}
     div 
         p=post.content
         small=post.createdAt
-    a(href=`${post.id}/edit`) 게시글 수정 &rarr;
-    br
-    a(href=`${post.id}/delete`) 게시글 삭제 &rarr;
+    if String(post.owner.id) === String(loggedInUser._id) 
+        a(href=`${post.id}/edit`) 게시글 수정 &rarr;
+        br
+        a(href=`${post.id}/delete`) 게시글 삭제 &rarr;

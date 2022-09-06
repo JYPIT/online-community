@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
+  fileUrl: { type: String, required: true },
   title: { type: String, required: true, minLength: 1, maxLength: 30 },
   content: { type: String, required: true, minLength: 1, maxLength: 500 },
   createdAt: { type: Date, required: true, default: Date.now },
@@ -8,6 +9,11 @@ const postSchema = new mongoose.Schema({
   meta: {
     views: { type: Number, default: 0, required: true },
     likes: { type: Number, default: 0, required: true },
+  },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User",
   },
 });
 
