@@ -2,12 +2,17 @@ extends base.pug
 include mixins/post
 
 block search 
-    form
+    form.search__form
         input(type="text" name="keyword" placeholder="통합검색")
         input(value="검색" type="submit")
 block content
-    h3 주요 뉴스
-    each p in posts 
-        +post(p)
-    else 
-        h4 게시글이 존재하지 않습니다.
+    h3 인기 게시글
+    div.home__posts
+        each p in posts 
+            +post(p)
+            +post(p)
+            +post(p)
+            +post(p)
+            +post(p)
+        else 
+            h4 게시글이 존재하지 않습니다.

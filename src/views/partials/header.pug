@@ -1,13 +1,11 @@
 header
-    a(href="/")
-        i.fab-landmark
+    a(href="/").header__logo
+        i.fa.solid.fa-landmark
         ul
-            li
-                a(href="/") 홈
             if loggedIn
                 li 
-                    a(href=`/users/${loggedInUser._id}`) #{loggedInUser.nickname} 
-                        img(src=loggedInUser.avatarUrl width=50 height=50) 
+                    a(href=`/users/${loggedInUser._id}`).user__avatar
+                        img(src=loggedInUser.avatarUrl) 
                 li
                     a(href="/users/edit") 프로필 수정
                 li 

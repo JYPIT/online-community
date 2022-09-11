@@ -1,0 +1,31 @@
+@import "../config/_variables.scss";
+
+header {
+  background-color: $header-bg;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header__logo {
+    color: $logo;
+    font-size: 30px;
+  }
+  .user__avatar {
+    img {
+      width: 50px;
+      height: 50px;
+      border: 2px solid $logo;
+      border-radius: 50%;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      margin-left: 30px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}

@@ -3,8 +3,13 @@
 @import "./config/_reset.scss";
 
 // Components
+@import "./components/header.scss";
+@import "./components/footer.scss";
+@import "./components/post.scss";
 
 // Screens
+@import "./screens/home.scss";
+@import "./screens/watch.scss";
 
 // Defaults
 
@@ -14,6 +19,16 @@ a {
 }
 
 body {
-  background-color: white;
-  color: black;
+  background-color: $bg;
+  color: white;
+  hr {
+    opacity: 0.4;
+  }
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
 }

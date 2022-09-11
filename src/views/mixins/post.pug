@@ -1,9 +1,7 @@
 mixin post(info)
-    div
-        h3 
-            a(href=`/posts/${info.id}`)=info.title
-            div
-                small=info.createdAt
-                samll ((#{info.comments}))
-            div 
-                small 조회수 #{info.views}
+    div.post-mixin
+        a(href=`/posts/${info.id}`)=info.title
+            span [(#{info.comments})]
+            br
+        small=info.createdAt
+        hr

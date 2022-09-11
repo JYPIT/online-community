@@ -19,7 +19,7 @@ export const home = async (req, res) => {
         return res.render("search", { pageTitle: "검색", findedPost });
       }
     }
-    return res.render("home", { pageTitle: "Ἀγορά", posts });
+    return res.render("home", { pageTitle: "Home", posts });
   } catch {
     return res.render("Error");
   }

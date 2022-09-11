@@ -7,7 +7,9 @@ block content
     div 
         p=post.content
         small=post.createdAt
-    if String(post.owner.id) === String(loggedInUser._id) 
-        a(href=`${post.id}/edit`) 게시글 수정 &rarr;
-        br
-        a(href=`${post.id}/delete`) 게시글 삭제 &rarr;
+    br
+    div.watch__btn
+        if String(post.owner.id) === String(loggedInUser._id)
+            a(href=`${post.id}/edit`) 게시글 수정 &rarr;
+            br
+            a(href=`${post.id}/delete`) 게시글 삭제 &rarr;
