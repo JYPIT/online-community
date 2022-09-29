@@ -28,7 +28,6 @@ export const home = async (req, res) => {
 export const watch = async (req, res) => {
   const { id } = req.params;
   const post = await Post.findById(id).populate("owner");
-  console.log(post);
   if (!post) {
     return res.status(404).render("404", { pageTitle: "게시물이 존재하지 않습니다." });
   }
