@@ -50,6 +50,5 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },
-  "type": "module",
   "homepage": "https://JYPIT.github.io/online-community"
 }
